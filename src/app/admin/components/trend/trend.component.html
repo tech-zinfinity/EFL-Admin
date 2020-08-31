@@ -1,0 +1,44 @@
+<h4>Trend </h4>
+<div style="display: flex;">
+    <button mat-stroked-button (click)="addTrendDialog()"
+        style="background-color: #0c0032; color: whitesmoke; width: 100px;">
+        <mat-icon>addchart</mat-icon> Add
+    </button>
+
+</div>
+
+<br>
+
+<div class="main">
+    
+        <div *ngFor="let td of trends">
+            <div *ngFor="let product of td.productList" class="card">
+                <mat-card>
+                    <div style="text-align: center; font-size: 20px;">
+                        {{td.name}}
+                    </div>
+                    <div>
+                        Id : {{product.id}}
+                    </div>
+                    <div>
+                        Offer Prices : {{product.offerprice}}
+                    </div>
+                   
+                    <div>
+                        Product Prices : {{product.price}}
+                    </div>
+                    <div>
+                        Active : {{product.active}}
+                    </div>
+                    <div style="display: flex; flex-direction: row !important;">
+                        Images:
+                        <div *ngFor="let img of product.tempImages">
+                            <img [src]="img" style="height: auto; width: 50px; padding: 5px; ">
+                        </div>
+                       
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    
+</div>

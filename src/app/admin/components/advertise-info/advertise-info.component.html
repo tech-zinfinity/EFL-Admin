@@ -1,0 +1,28 @@
+<div>
+    <button mat-stroked-button (click)="file.click()" *ngIf="!fileadded"
+        style="background-color: rgb(12, 5, 204); color: whitesmoke; width: 200px;margin-left: 10px;">
+        <mat-icon>camera</mat-icon> Add Photo
+    </button>
+
+    <input type="file" #file hidden (change)=addImg($event)>
+
+    <button mat-stroked-button (click)="uploadImagesinBackend()" *ngIf="fileadded"
+        style="background-color: rgb(12, 5, 204); color: whitesmoke; width: 200px;margin-left: 10px;">
+        <mat-icon>upload</mat-icon> Upload Image
+    </button>
+    <button mat-stroked-button (click)="emptyFileContent()" *ngIf="fileadded"
+        style="background-color: rgb(12, 5, 204); color: whitesmoke; width: 200px;margin-left: 10px;">
+        <mat-icon>delete</mat-icon>
+    </button>
+</div><br>
+
+<div>
+    <mat-card style="display: flex; flex-direction: column; justify-content: space-evenly;  ">
+
+        <div>Id: {{(AdvertiseObs | async).id}}</div>
+        <div>Title: {{(AdvertiseObs | async).title}}</div>
+        <div>Product Id: {{(AdvertiseObs | async).productId}}</div>
+        <img [src]="(AdvertiseObs | async).tempCoverImage" >
+    </mat-card>
+    
+</div>

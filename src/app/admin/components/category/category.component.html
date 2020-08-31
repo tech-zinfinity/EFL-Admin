@@ -1,0 +1,39 @@
+<h4>Categories </h4>
+<div style="display: flex;">
+  <button mat-stroked-button (click)="addCategoryDialog()"
+    style="background-color: #0c0032; color: whitesmoke; width: 100px;">
+    <mat-icon>addchart</mat-icon> Add
+  </button>
+  <button mat-stroked-button
+    style="background-color: rgb(204, 5, 5); color: whitesmoke; width: 100px;margin-left: 10px;">
+    <mat-icon>delete_sweep</mat-icon> Delete
+  </button>
+</div>
+
+<br>
+
+<div class="category"><br>
+  <div class="container1">
+    <div *ngFor="let cat of categories">
+      <div class="layout-box grow ">
+        <div>
+          <p class="mid underline">{{cat.displayName}}</p><br>
+          <div>
+            <div id="parent">
+              <p style="word-break: normal;padding: 0px 25px 0px 25px;text-align: justify;">
+                {{cat.description}}
+              </p>
+            </div>
+          </div><br>
+          <div class="footer">
+            <div style="margin: 0% 10% 0% 10%;">
+              <button mat-stroked-button style="  display: block;width: 100%;border-radius: 50px; background-color: black; color: 
+    white !important;padding: 8px;font-size: large;" (click)="viewAllSubCategories(cat.id)">View Details</button>
+            </div>
+          </div>
+          <div style="display: flex;margin-top: 50pxpx;height: 50px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+.upload{
+    width: 30%;
+}
+.imgName{
+    margin-left: 10px;
+}
+
+.submit{
+    width: 100%;
+    font-size: large;
+    background-color: #2920af;
+    color: white;
+    margin-top: 20px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .upload{
+        width: 100%;
+    }
+    .imgName{
+        margin-left: 0px;
+        margin-top: 5px;
+    }
+}
+
+::ng-deep.mat-dialog-container {
+    padding: 0 !important;
+}

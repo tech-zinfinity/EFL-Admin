@@ -1,0 +1,55 @@
+<br><br><br>
+<div style="margin-top: 30px;margin-bottom: -40px;">
+    <mat-toolbar style="background-color: #0c0032; color: whitesmoke;" class="example-toolbar">
+        <button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
+        <h1 class="example-app-name">Admin</h1>
+    </mat-toolbar>
+    <mat-sidenav-container class="example-container" autosize>
+        <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+            <mat-nav-list>
+                <mat-list-item  class="parent"  routerLink="category">
+                    <span class="full-width" *ngIf="isExpanded || isShowing">
+                        <span style="font-size: large;">Category</span></span>
+                        <button style="color: whitesmoke;font-size: large;" mat-mini-fab disabled aria-label="Example icon button with a home icon">
+                            C
+                          </button>
+                </mat-list-item>
+                
+                <mat-list-item  class="parent"  routerLink="advertise">
+                    <span class="full-width" *ngIf="isExpanded || isShowing">
+                        <span style="font-size: large;">Advertise</span></span>
+                        <button style="color: whitesmoke;font-size: large;" mat-mini-fab disabled aria-label="Example icon button with a home icon">
+                            A
+                          </button>
+                </mat-list-item>
+
+                <mat-list-item  class="parent" routerLink="trend">
+                    <span class="full-width" *ngIf="isExpanded || isShowing" >
+                        <span style="font-size: large;">Trend</span></span>
+                        <button style="color: whitesmoke;font-size: large;" mat-mini-fab disabled aria-label="Example icon button with a home icon">
+                            T
+                          </button>
+                </mat-list-item>
+
+                <mat-list-item  class="parent"  routerLink="enquiry">
+                    <span class="full-width" *ngIf="isExpanded || isShowing">
+                        <span style="font-size: large;">Enquiry</span></span>
+                        <button style="color: whitesmoke;font-size: large;" mat-mini-fab disabled aria-label="Example icon button with a home icon">
+                            E
+                          </button>
+                </mat-list-item>
+                
+            </mat-nav-list>
+        <mat-nav-list>
+    </mat-nav-list>
+        </mat-sidenav>
+    
+        <div class="example-sidenav-content">
+            <div style="margin:3%">
+           <router-outlet></router-outlet>
+        </div>
+
+        </div>
+    
+    </mat-sidenav-container>
+</div>

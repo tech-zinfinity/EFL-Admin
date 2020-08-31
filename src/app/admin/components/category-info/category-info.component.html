@@ -1,0 +1,104 @@
+<h4>Category Details </h4>
+<div class="cat-btns">
+  <button mat-raised-button class="activate" (click)="activateCategory()">Activate</button>
+  <button mat-raised-button class="deactivate">Deactivate</button>
+  <button mat-raised-button class="delete">Delete</button>
+  <button mat-raised-button class="subcatBtn" (click)="addSubCategoryDialog()">Add Subcategory</button>
+</div>
+
+<div class="cat-main">
+  <div class="cat-desc">
+    <h3><span class="dot-active"></span>
+      <span class="dot-deactive"></span>
+      {{(categoryObs | async).name}} | {{(categoryObs | async).displayName}}
+      <button mat-stroked-button class="edit_name_btn" data-toggle="modal" data-target="#exampleModal">
+        <mat-icon>edit</mat-icon>
+      </button></h3>
+    <p>{{(categoryObs | async).description}} | {{(categoryObs | async).count}} </p>
+
+    <button mat-stroked-button class="edit_desc_btn" data-toggle="modal" data-target="#description">
+      <mat-icon>edit</mat-icon>
+      Edit Description
+    </button>
+  </div>
+  <div class="cat-img">
+    <img src="../../../../assets/img/teamwork.jpg" alt="" class="catimg">
+    <p class="img-name">image name .jpeg</p>
+    <button mat-stroked-button class="edit_btn">
+      <mat-icon>edit</mat-icon>Edit Image
+    </button>
+  </div>
+</div>
+
+<div class="subCategory">
+
+  <h3>Sub Caterories</h3>
+  <div class="category"><br>
+    <div class="container1" *ngFor="let subcat of subCategories">
+      <mat-card (click)="navigateToSubcategoryInfo(subcat.id)" style="cursor: pointer;">
+        <img src="../../../../assets/img/kaju.jpg" alt="SubCategory"
+          style="width: 150px;height: 150px;left: 50;margin: 0 auto;">
+        <p>{{subcat.name}}</p>
+      </mat-card>
+    </div><br>
+  </div>
+
+</div>
+
+
+<!-- Modal for category name-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" data-backdrop="false"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Change Category Name</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form>
+          <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Category Name</mat-label>
+            <input matInput placeholder="Category Name">
+          </mat-form-field>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal for category Desciption-->
+<div class="modal fade" id="description" tabindex="-1" role="dialog" data-backdrop="false"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Change Category Name</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form>
+          <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="Description" style=" " rows="4" cols="200"></textarea>
+          </mat-form-field>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

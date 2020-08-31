@@ -1,0 +1,105 @@
+<div>
+    <div style="background-color: #0c0032;border-radius: 4px; color: whitesmoke; height: 60px;width: 100%;">
+    <div >
+    <p style="font-size: large;padding: 10px;">
+        <span >
+        Add Products</span>
+    <span>
+        <button mat-icon-button style="font-size: large;float: 
+        right; border: 1px solid whitesmoke;outline: none;" (click)="closeDialog()">
+        <mat-icon>close</mat-icon></button>
+    </span></p>
+    
+    </div>
+    </div><br>
+    
+    <div>
+    <form style="padding-left: 5%; padding-right: 5%;"
+    [formGroup] = "addProductForm">
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label >Product Name</mat-label>
+            <input matInput placeholder="Product Name" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label >Product Display Name</mat-label>
+            <input matInput placeholder="Product Display Name" formControlName="displayName">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label >Description</mat-label>
+            <textarea matInput placeholder="Description" formControlName="description" rows="4" cols="200"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label >Fssi Licence No</mat-label>
+            <input matInput placeholder="Fssi LicenceNo" formControlName="fssiLicenceNo">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" style="width: 80%;">
+            <mat-label > Add Tags</mat-label>
+            <input matInput placeholder="Add Tags" formControlName="tags">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" style="width: 50%;">
+            <mat-label >Cost</mat-label>
+            <input matInput placeholder="Cost" formControlName="cost">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width: 50%;">
+            <mat-label >Margin</mat-label>
+            <input matInput placeholder="Marngin in %" formControlName="margin">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width: 50%;">
+            <mat-label >Unit</mat-label>
+            <input matInput placeholder="KG/LTR/UNIT" formControlName="unit">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" style="width: 50%;">
+            <mat-label >CGST</mat-label>
+            <input matInput placeholder="CGST" formControlName="cgst">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width: 50%;">
+            <mat-label >SGST</mat-label>
+            <input matInput placeholder="SGST" formControlName="sgst">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width: 50%;">
+            <mat-label >IGST</mat-label>
+            <input matInput placeholder="IGST" formControlName="igst">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width: 50%;">
+            <mat-label >Shelf Life</mat-label>
+            <input matInput placeholder="Shelf Life" formControlName="shelfLife">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" style="width: 50%;">
+            <mat-label >Location</mat-label>
+            <input matInput placeholder="location" formControlName="location">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width: 50%;">
+            <mat-label >Price</mat-label>
+            <input matInput placeholder="Final Price" formControlName="price">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width: 50%;">
+            <mat-label >Offer Price</mat-label>
+            <input matInput placeholder="Offer Price" formControlName="offerPrice">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width: 50%;">
+            <mat-label >Rating</mat-label>
+            <input matInput placeholder="Offer Price" formControlName="rating">
+        </mat-form-field>
+    
+        <!-- <button mat-raised-button class="upload"><mat-icon>publish &nbsp;</mat-icon>Upload Image</button>
+        <span class="imgName">Image  Name</span> -->
+        <button mat-raised-button class="submit" (click)="addProduct(addProductForm.value)"
+        [disabled]="addProductForm.invalid">Submit</button>
+    </form>
+    </div>
+    </div>

@@ -1,0 +1,40 @@
+<div>
+    <div style="background-color: #0c0032;color: whitesmoke; height: 60px;width: 100%;">
+        <div>
+            <p style="font-size: large;padding: 10px;">
+                <span>
+                    Add Advertise</span>
+                <span>
+                    <button mat-icon-button style="font-size: large;float: 
+        right; border: 1px solid whitesmoke;outline: none;" (click)="closeDialog()">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </span></p>
+
+
+        </div> <br>
+    </div>
+
+    <div>
+        <form [formGroup]="addAdvertiseForm">
+            <mat-form-field appearance="outline" style="width: 100%;">
+                <mat-label>Title</mat-label>
+                <input matInput placeholder="Title" formControlName="title">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" style="width: 100%;">
+                <mat-label>Product Id</mat-label>
+                <input matInput placeholder="Product Id" formControlName="productId">
+            </mat-form-field>
+
+           
+
+            <div style="display: flex; width: 100%;">
+                <button mat-raised-button class="submit" (click)="addAdvertise(addAdvertiseForm.value)"
+                    [disabled]="addAdvertiseForm.invalid">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>

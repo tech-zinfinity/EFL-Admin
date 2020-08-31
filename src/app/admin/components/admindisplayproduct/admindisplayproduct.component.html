@@ -1,0 +1,82 @@
+<h4>{{(productObs | async).name}} </h4>
+<div style="display: flex;">
+  <button mat-stroked-button style="background-color: #0c0032; color: whitesmoke; width: 100px;"
+  (click)="activateProduct(dummy.id)" *ngIf="!(productObs | async).active">
+    <mat-icon>addchart</mat-icon> Activate
+  </button>
+  <!-- <button mat-stroked-button style="background-color: rgb(204, 5, 5); color: whitesmoke; width: 100px;"
+  (click)="deActivateProduct(dummy.id)" *ngIf="(productObs | async).active">
+    <mat-icon>addchart</mat-icon> Deactivate
+  </button> -->
+  <button mat-stroked-button
+    style="background-color: rgb(204, 5, 5); color: whitesmoke; width: 100px;margin-left: 10px;">
+    <mat-icon>delete_sweep</mat-icon> Delete
+  </button>
+
+  <button mat-stroked-button (click)="file.click()" *ngIf="!fileadded"
+    style="background-color: rgb(12, 5, 204); color: whitesmoke; width: 200px;margin-left: 10px;">
+    <mat-icon>camera</mat-icon> Add Photo
+  </button>
+
+  <input type="file" #file hidden (change)=addImg($event)>
+
+  <button mat-stroked-button (click)="uploadFilesOnBackend()" *ngIf="fileadded"
+  style="background-color: rgb(12, 5, 204); color: whitesmoke; width: 200px;margin-left: 10px;">
+  <mat-icon>upload</mat-icon> Upload Image
+  </button>
+  <button mat-stroked-button (click)="emptyFileContent()" *ngIf="fileadded"
+    style="background-color: rgb(12, 5, 204); color: whitesmoke; width: 200px;margin-left: 10px;">
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>
+
+<br>
+
+<div>
+  <mat-card style="display: flex; flex-direction: column; justify-content: space-evenly; 
+  ">
+    <div>Id: {{(productObs | async).id}}</div>
+    <div>Name: {{(productObs | async).name}}</div>
+    <div>Display Name : {{(productObs | async).displayName}}</div>
+    <div>description : {{(productObs | async).description}}</div>
+    <div>Tags :{{ (productObs | async).tags}}</div>
+    <div>Cost: {{(productObs | async).pricing.cost}}</div>
+    <div>Margin: {{(productObs | async).pricing.margin}}</div>
+    <div>SGST: {{(productObs | async).pricing.taxInfo.sgst}}</div>
+    <div>CGST: {{(productObs | async).pricing.taxInfo.cgst}}</div>
+    <div>IGST: {{(productObs | async).pricing.taxInfo.igst}}</div>
+    <div>IGST: {{(productObs | async).pricing.taxInfo.igst}}</div>
+    <div>rating: {{(productObs | async).rating}}</div>
+    <div>fssiLicenceNo: {{(productObs | async).fssiLicenceNo}}</div>
+
+    <div>shelfLife: {{(productObs | async).shelfLife}}</div>
+    <div>location: {{(productObs | async).location}}</div>
+    <div>offerPrice: {{(productObs | async).pricing.offerPrice}}</div>
+    <div>price: {{(productObs | async).pricing.price}}</div>
+
+    <div *ngFor="let image of (productObs | async).tempImages">
+      <img [src]="image" style="height: auto; width: 50px;">
+    </div>
+    <div style="color: red;">active: {{(productObs | async).active}}</div>
+
+  </mat-card>
+</div>
+
+<!-- <div class="category"><br>
+<div class="container1">
+  <div class="layout-box mid " routerLink="/productdetails1">
+    <p>Dry Fruits</p>
+  </div>
+
+  <div class="layout-box mid ">
+    <p>Dry Fruits</p>
+  </div>
+
+  <div class="layout-box mid ">
+    <p>Dry Fruits</p>
+  </div>
+  
+  {{(productObs | async).name}}
+  
+</div><br>
+</div> -->

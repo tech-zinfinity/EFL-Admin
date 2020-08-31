@@ -1,0 +1,33 @@
+
+<h2 style="text-align: center;">Enquiry</h2>
+
+<div class="main">
+    
+    <div *ngFor="let enq of enquirys">
+        <div class="card">
+            <mat-card>
+                <div>
+                  Name :  {{enq.name}}
+                </div>
+                <div>
+                    Id : {{enq.id}}
+                </div>
+                <div>
+                    Phone No : {{enq.phone1}} , {{enq.phone2}}
+                </div>
+               
+                <div>
+                    Email : {{enq.email}}
+                </div>
+                <div>
+                    Subject : {{enq.subject}}
+                </div>
+                <div>
+                    Message : {{enq.message}}
+                </div>
+            
+            </mat-card>
+        </div>
+    </div>
+
+</div>

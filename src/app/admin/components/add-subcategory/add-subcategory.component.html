@@ -1,0 +1,42 @@
+<div>
+    <div style="background-color: #0c0032;color: whitesmoke; height: 60px;width: 100%;">
+    <div >
+    <p style="font-size: large;padding: 10px;">
+        <span>
+        Add sub-category</span>
+    <span>
+        <button mat-icon-button style="font-size: large;float: 
+        right; border: 1px solid whitesmoke;outline: none;" (click)="closeDialog()">
+        <mat-icon>close</mat-icon></button>
+    </span></p>
+    
+    </div>
+    </div><br>
+    
+    <div>
+    <form [formGroup] = "addSubCategoryForm">
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label >Regular Name</mat-label>
+            <input matInput placeholder=" Regular Name" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label >Display Name</mat-label>
+            <input matInput placeholder="Display Name" formControlName="displayName">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label >Description</mat-label>
+            <textarea matInput placeholder="Description"  rows="4" cols="200"
+            formControlName="description"></textarea>
+        </mat-form-field>
+
+        <div style="display: flex;width: 100%;">
+            <button mat-raised-button class="submit" 
+            (click)="addSubCategory(addSubCategoryForm.value)"
+             [disabled]="addSubCategoryForm.invalid">Submit</button>
+        </div>
+
+    </form>
+    </div>
+    </div>

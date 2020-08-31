@@ -1,0 +1,17 @@
+<h4>Add Advertise </h4>
+<div style="display: flex;">
+    <button mat-stroked-button (click)="addadvertiseDialog()" style="background-color: #0c0032; color: whitesmoke; width: 100px;">
+       <mat-icon>addchart</mat-icon> Add</button> 
+        <!-- <button mat-stroked-button style="background-color: rgb(204, 5, 5); color: whitesmoke; width: 100px;margin-left: 10px;">
+           <mat-icon>delete_sweep</mat-icon> Delete</button> -->
+</div>
+<br>
+<div *ngFor="let ad of advertises">
+
+   <mat-card (click)="navigateAdvertiseInfo(ad.id)">
+      {{ad.title}}
+      {{ad.productId}}
+   </mat-card>
+
+  
+</div>
