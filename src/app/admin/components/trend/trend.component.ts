@@ -6,7 +6,7 @@ import {  ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { SpinnerService } from 'src/app/services/spinner.service';
 import { FireStorageService } from 'src/app/services/fire-storage.service';
-import { AdminaddtrendComponent } from '../components/adminaddtrend/adminaddtrend.component';
+import { AdminaddtrendComponent } from '../adminaddtrend/adminaddtrend.component';
 import { Product } from 'src/app/entities/product';
 
 

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdminModule } from './admin/admin/admin.module';
+
 import { AddAdvertiseComponent } from './admin/components/add-advertise/add-advertise.component';
 import { MaterialModule } from '././material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,6 +22,7 @@ import { SubCategoryComponent } from './admin/components/sub-category/sub-catego
 import { SubcategoryInfoComponent } from './admin/components/subcategory-info/subcategory-info.component';
 import { DisplayenquiryComponent } from './admin/components/displayenquiry/displayenquiry.component';
 import { TrendComponent } from './admin/components/trend/trend.component';
+import { SpinnerComponent } from './component/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -41,12 +42,13 @@ import { TrendComponent } from './admin/components/trend/trend.component';
     SubCategoryComponent,
     SubcategoryInfoComponent,
     DisplayenquiryComponent,
-    TrendComponent
+    TrendComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AdminModule,,MaterialModule, BrowserAnimationsModule
+  ,MaterialModule, BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
