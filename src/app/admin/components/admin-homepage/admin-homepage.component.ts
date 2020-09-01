@@ -9,7 +9,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 export class AdminHomepageComponent implements OnInit {
 
   constructor() { }
-  @ViewChild('sidenav') sidenav: MatSidenav;
+  @ViewChild('sidenav',{static:false}) sidenav: MatSidenav;
   isExpanded = false;
   showSubmenu: boolean = false;
   isShowing = false;

@@ -1,3 +1,5 @@
+import { environment } from 'src/environments/environment';
+import { CategoryService } from 'src/app/services/category.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -23,6 +25,12 @@ import { SubcategoryInfoComponent } from './admin/components/subcategory-info/su
 import { DisplayenquiryComponent } from './admin/components/displayenquiry/displayenquiry.component';
 import { TrendComponent } from './admin/components/trend/trend.component';
 import { SpinnerComponent } from './component/spinner/spinner.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { AngularFireModule } from "@angular/fire/";
+import { AngularFireStorageModule } from "@angular/fire/storage";
 
 @NgModule({
   declarations: [
@@ -48,9 +56,23 @@ import { SpinnerComponent } from './component/spinner/spinner.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-  ,MaterialModule, BrowserAnimationsModule
+    MaterialModule, 
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [CategoryService],
+  bootstrap: [AppComponent],
+  entryComponents:[
+    AddAdvertiseComponent,
+    AddCategoryComponent,
+    AddSubcategoryComponent,
+    AdminaddproductComponent,
+    AdminaddtrendComponent,
+  ]
 })
 export class AppModule { }

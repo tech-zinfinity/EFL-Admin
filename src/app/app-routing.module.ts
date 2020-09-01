@@ -18,28 +18,21 @@ import { SpinnerComponent } from './component/spinner/spinner.component';
 
 
 const routes: Routes = [
-  {
-    path: '', children: [
-      {
-        path: '', component: AdminHomepageComponent, children: [
-          { path: '', component: CategoryComponent },
-          { path: 'category', component: CategoryComponent },
-          { path: 'subcategory/:id', component: SubCategoryComponent },
-          { path: 'category/:id', component: CategoryInfoComponent },
-          { path: 'subcategoryinfo/:id', component: SubcategoryInfoComponent, },
-          { path: 'displayproduct/:id', component: AdmindisplayproductComponent },
-          { path: 'addproduct', component: AdminaddproductComponent },
-          { path: 'productdetails1', component: AdminproductinfoComponent },
-          { path: 'advertise', component: AdvertiseComponent},
-          { path: 'addadvertise', component: AddAdvertiseComponent},
-          { path: 'advertiseinfo/:id' , component: AdvertiseInfoComponent},
-          { path: 'trend' , component: TrendComponent},
-          { path: 'enquiry' , component: DisplayenquiryComponent}
-        ]
-      },
-    ]
-  },
-
+    {path: '', component: AdminHomepageComponent, children:[    
+      { path: '', component: CategoryComponent },
+      { path: 'category', component: CategoryComponent },
+      { path: 'subcategory/:id', component: SubCategoryComponent },
+      { path: 'category/:id', component: CategoryInfoComponent },
+      { path: 'subcategoryinfo/:id', component: SubcategoryInfoComponent, },
+      { path: 'displayproduct/:id', component: AdmindisplayproductComponent },
+      { path: 'addproduct', component: AdminaddproductComponent },
+      { path: 'productdetails1', component: AdminproductinfoComponent },
+      { path: 'advertise', component: AdvertiseComponent},
+      { path: 'addadvertise', component: AddAdvertiseComponent},
+      { path: 'advertiseinfo/:id' , component: AdvertiseInfoComponent},
+      { path: 'trend' , component: TrendComponent},
+      { path: 'enquiry' , component: DisplayenquiryComponent}
+    ]},      
 ];
 
 @NgModule({

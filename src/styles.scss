@@ -1,4 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    font-family: 'Jost', sans-serif;
+    button{
+        font-family: 'Jost', sans-serif !important;
+      }
+}
+$mat-form-field-legacy-dedupe: null;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%; 
+}
+body { margin: 0; 
+  .validatorsStyle
+  {
+    color: red;
+    font-size: small;
+
+   
+  }
+  .my-class .mat-dialog-container{
+    background: transparent;
+    opacity: 10;
+    box-shadow: none;
+  }
+
+  .green-backdrop {
+    background-color: black;
+    opacity: 0.6 !important;
+  }
+
+  #content-desktop {display: block;}
+  #content-mobile {display: none;}
+  
+  @media screen and (max-width: 768px) {
+  
+  #content-desktop {display: none;}
+  #content-mobile {display: block;}
+  
+  }
+  @import '~@angular/material/theming';
+  $custom-typography: mat-typography-config(
+    $font-family: 'Jost'
+  );
+  @include mat-core($custom-typography);
+
+  
+
+}
